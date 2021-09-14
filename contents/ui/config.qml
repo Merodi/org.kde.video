@@ -9,7 +9,7 @@ ColumnLayout {
     id: root
     property string cfg_Video
     property string cfg_Folder
-    property bool cfg_Muted
+    property int cfg_VideoVolume
     property double cfg_Rate
     property bool cfg_Shuffle;
 
@@ -87,12 +87,19 @@ ColumnLayout {
                 Layout.preferredWidth: parent.itemWidth 
                 Layout.preferredHeight: parent.itemHeight
 
-                CheckBox {
-                    text: "Muted"
-                    anchors.horizontalCenter: parent.horizontalCenter // center checkbox
+                RowLayout {
+                    anchors.horizontalCenter: parent.horizontalCenter // center in the group box
 
-                    checked: wallpaper.configuration.Muted
-                    onCheckedChanged: { cfg_Muted = checked }
+                    Slider {
+                        minimumValue: 0
+                        maximumValue: 100
+                        stepSize: 1
+                    
+                        value: wallpaper.configuration.VideoVolume
+                        onValueChanged: {
+                            cfg_VideoVolume = value
+                        }
+                    }
                 }
             } // audio settings GroupBox
 
