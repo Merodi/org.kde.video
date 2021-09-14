@@ -15,7 +15,7 @@ Item {
         flushMode: VideoOutput.LastFrame // remove blinking
 
         // Configurable part
-        muted: wallpaper.configuration.Muted
+        volume: wallpaper.configuration.VideoVolume/100
         playbackRate: wallpaper.configuration.Rate
 
         // Source setup
