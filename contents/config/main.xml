@@ -14,9 +14,9 @@
       <label>Last folder used</label>
       <default></default>
     </entry>
-    <entry name="Muted" type="Bool">
-      <label>Audio muted</label>
-      <default>false</default>
+    <entry name="VideoVolume" type="int">
+      <label>Video Volume</label>
+      <default>0</default>
     </entry>
     <entry name="Rate" type="Double">
       <label>Playback Rate</label>
